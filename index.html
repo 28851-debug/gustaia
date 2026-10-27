@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Allyson de Santana Almeida — Narrativa & Portfólio Pessoal</title>
+  <meta name="description" content="Narrativa pessoal e portfólio de Allyson de Santana Almeida — Estudante de Tecnologia da Informação no Colégio Raphael Di Santo em Campinas, SP.">
+  <meta name="author" content="Allyson de Santana Almeida">
+  <meta name="theme-color" content="#090a0d">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Allyson de Santana Almeida — Portfólio Pessoal">
+  <meta property="og:description" content="Estudante de Tecnologia da Informação no Colégio Raphael Di Santo. Conheça minha trajetória e interesses.">
+  <meta property="og:type" content="website">
+
+  <!-- Tipografia: Google Fonts com Fallbacks Locais no CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Barra de progresso de leitura no topo -->
+  <div 
+    id="reading-progress" 
+    class="reading-progress" 
+    role="progressbar" 
+    aria-label="Progresso de leitura da narrativa" 
+    aria-valuemin="0" 
+    aria-valuemax="100" 
+    aria-valuenow="0"
+  ></div>
+
+  <!-- Link de acessibilidade para salto de conteúdo -->
+  <a href="#hero" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- Fundo com grid editorial e elementos decorativos com parallax limitado -->
+  <div class="ambient-grid" aria-hidden="true">
+    <div class="grid-line horizontal top"></div>
+    <div class="grid-line horizontal middle" data-parallax="true" data-parallax-speed="0.08"></div>
+    <div class="grid-line vertical left"></div>
+    <div class="grid-line vertical right"></div>
+    <div class="deco-orbit" data-parallax="true" data-parallax-speed="0.12"></div>
+    <div class="ambient-glow" id="ambient-glow" data-parallax="true" data-parallax-speed="0.05"></div>
+  </div>
+
+  <!-- Cabeçalho fixo com navegação editorial -->
+  <header class="editorial-header">
+    <div class="header-inner">
+      <a href="#hero" class="header-brand" aria-label="Ir para o início — Allyson de Santana Almeida">
+        <span class="brand-monogram">ASA</span>
+        <span class="brand-fullname">Allyson de Santana Almeida</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Navegação pelos capítulos">
+        <ul class="nav-list">
+          <li><a href="#about" class="nav-link">Quem sou</a></li>
+          <li><a href="#trajectory" class="nav-link">Trajetória</a></li>
+          <li><a href="#interests" class="nav-link">Interesses</a></li>
+          <li><a href="#building" class="nav-link">Construção</a></li>
+          <li><a href="#journey" class="nav-link">Jornada</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-status">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span class="status-text">TI • Raphael Di Santo</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    
+    <!-- ====================================================================
+         1. HERO SECTION (#hero)
+         ==================================================================== -->
+    <section id="hero" class="hero-stage">
+      <div class="hero-container">
+        
+        <div class="hero-meta-bar reveal-item">
+          <div class="editorial-stamp">
+            <span class="stamp-index">CAPÍTULO 00</span>
+            <span class="stamp-label">INÍCIO DA NARRATIVA</span>
+          </div>
+          <div class="coordinates-stamp" aria-label="Localidade de nascimento: Campinas, São Paulo, Brasil">
+            <span class="coord-icon" aria-hidden="true">✦</span>
+            <span>22.9064° S, 47.0616° W</span>
+            <span class="coord-city">Campinas, SP</span>
+          </div>
+        </div>
+
+        <div class="hero-composition">
+          <div class="hero-identity reveal-item">
+            <div class="identity-badge">
+              <span class="badge-dot" aria-hidden="true"></span>
+              <span class="badge-text">Estudante de Tecnologia da Informação</span>
+            </div>
+
+            <h1 class="hero-name" aria-label="Allyson de Santana Almeida">
+              <span class="name-line line-first">Allyson</span>
+              <span class="name-line line-middle">de Santana</span>
+              <span class="name-line line-last">Almeida</span>
+            </h1>
+
+            <div class="hero-identity-foot">
+              <span class="foot-detail">Nascido em Campinas, SP</span>
+              <span class="foot-bullet" aria-hidden="true">—</span>
+              <span class="foot-detail">Colégio Raphael Di Santo desde o 6º ano</span>
+            </div>
+          </div>
+
+          <div class="hero-narrative reveal-item">
+            <div class="narrative-card">
+              <div class="card-header">
+                <span class="card-number">00</span>
+                <span class="card-title">Apresentação</span>
+              </div>
+
+              <p class="hero-description">
+                Estudante de Tecnologia da Informação, desenvolvendo minha trajetória com dedicação desde os primeiros anos no Colégio Raphael Di Santo. Movido pela curiosidade intelectual, pelo raciocínio lógico e pela vontade constante de aprender.
+              </p>
+
+              <div class="hero-academic-path">
+                <div class="path-item">
+                  <span class="path-label">Área de Estudo</span>
+                  <span class="path-value">Tecnologia da Informação</span>
+                </div>
+                <div class="path-item">
+                  <span class="path-label">Instituição</span>
+                  <span class="path-value">Colégio Raphael Di Santo (desde o sexto ano)</span>
+                </div>
+                <div class="path-item">
+                  <span class="path-label">Origem</span>
+                  <span class="path-value">Campinas, São Paulo, Brasil</span>
+                </div>
+              </div>
+
+              <!-- CTA Nativo para a seção #about -->
+              <div class="hero-action-group">
+                <a href="#about" class="btn-cta" id="hero-cta">
+                  <span class="btn-cta-text">Conheça minha trajetória</span>
+                  <span class="btn-cta-icon" aria-hidden="true">
+                    <svg class="arrow-glyph default" viewBox="0 0 16 16" fill="none">
+                      <path d="M2.5 8h11M9 3.5l4.5 4.5L9 12.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg class="arrow-glyph clone" viewBox="0 0 16 16" fill="none">
+                      <path d="M2.5 8h11M9 3.5l4.5 4.5L9 12.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Indicador visual de rolagem nativo para #about -->
+        <div class="hero-scroll-wrap reveal-item">
+          <a href="#about" class="hero-scroll-indicator" aria-label="Rolar para o capítulo Quem sou">
+            <span class="scroll-text">Rolar para explorar</span>
+            <span class="scroll-line-track" aria-hidden="true">
+              <span class="scroll-line-thumb"></span>
+            </span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         2. QUEM SOU (#about)
+         ==================================================================== -->
+    <section id="about" class="chapter-section chapter-about">
+      <div class="chapter-container">
+        
+        <header class="chapter-header reveal-item">
+          <div class="chapter-tag">
+            <span class="chapter-number">01</span>
+            <span class="chapter-label">IDENTIDADE & ESSÊNCIA</span>
+          </div>
+          <h2 class="chapter-title">Quem sou</h2>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-lead reveal-item">
+            <p class="lead-statement">
+              Uma trajetória construída com seriedade, curiosidade investigativa e dedicação diária aos fundamentos da tecnologia.
+            </p>
+            <div class="origin-stamp" aria-label="Origem e região de referência">
+              <span class="stamp-bullet" aria-hidden="true">✦</span>
+              <span>Campinas, São Paulo • Região do Garcia como referência formativa</span>
+            </div>
+          </div>
+
+          <div class="about-text-column reveal-item">
+            <p class="paragraph">
+              Sou estudante de Tecnologia da Informação, nascido em Campinas, São Paulo. Desde cedo, compreendi o estudo não apenas como uma obrigação escolar, mas como o meio definitivo de expandir a percepção sobre como o mundo contemporâneo é estruturado.
+            </p>
+            <p class="paragraph">
+              Minha formação escolar no Colégio Raphael Di Santo, onde estudo desde o sexto ano, consolidou valores de disciplina, respeito ao processo de maturação intelectual e entusiasmo diante do raciocínio analítico. O interesse pela Tecnologia da Informação surgiu de forma natural, a partir da vontade de entender como dados, arquiteturas e sistemas digitais se articulam para solucionar desafios reais.
+            </p>
+            
+            <div class="about-highlights-grid">
+              <div class="highlight-item">
+                <span class="highlight-caption">Postura</span>
+                <span class="highlight-value">Curiosidade e aprendizado contínuo</span>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-caption">Foco</span>
+                <span class="highlight-value">Fundamentos em Tecnologia da Informação</span>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-caption">Escola</span>
+                <span class="highlight-value">Colégio Raphael Di Santo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         3. MINHA TRAJETÓRIA (#trajectory)
+         ==================================================================== -->
+    <section id="trajectory" class="chapter-section chapter-trajectory">
+      <div class="chapter-container">
+        
+        <header class="chapter-header reveal-item">
+          <div class="chapter-tag">
+            <span class="chapter-number">02</span>
+            <span class="chapter-label">LINHA DO TEMPO ESCOLAR</span>
+          </div>
+          <h2 class="chapter-title">Minha trajetória</h2>
+          <p class="chapter-subtitle">
+            A continuidade escolar como base firme para o amadurecimento e a escolha da Tecnologia da Informação.
+          </p>
+        </header>
+
+        <!-- Timeline semântica com wrapper, linha externa ao ol e marcadores por item -->
+        <div class="timeline reveal-item">
+          <div class="timeline__line" aria-hidden="true"></div>
+
+          <ol class="timeline__list">
+            <li class="timeline__item reveal-item">
+              <span class="timeline__marker" aria-hidden="true"></span>
+              <div class="timeline__card">
+                <div class="timeline__meta">
+                  <span class="timeline__stage">Marco 01</span>
+                  <span class="timeline__place">Colégio Raphael Di Santo</span>
+                </div>
+                <h3 class="timeline__heading">Ingresso no Sexto Ano</h3>
+                <p class="timeline__desc">
+                  Entrada no Colégio Raphael Di Santo no sexto ano do ensino fundamental, dando início a uma jornada de estabilidade acadêmica, convivência e formação de disciplina de estudos.
+                </p>
+              </div>
+            </li>
+
+            <li class="timeline__item reveal-item">
+              <span class="timeline__marker" aria-hidden="true"></span>
+              <div class="timeline__card">
+                <div class="timeline__meta">
+                  <span class="timeline__stage">Marco 02</span>
+                  <span class="timeline__place">Curiosidade Ativa</span>
+                </div>
+                <h3 class="timeline__heading">Descoberta da Tecnologia</h3>
+                <p class="timeline__desc">
+                  Durante os anos de convivência escolar, a curiosidade sobre funcionamento de computadores, lógica e ambientes digitais transformou-se em interesse concentrado na área de TI.
+                </p>
+              </div>
+            </li>
+
+            <li class="timeline__item reveal-item">
+              <span class="timeline__marker" aria-hidden="true"></span>
+              <div class="timeline__card">
+                <div class="timeline__meta">
+                  <span class="timeline__stage">Marco 03</span>
+                  <span class="timeline__place">Formação em Curso</span>
+                </div>
+                <h3 class="timeline__heading">Estudante de Tecnologia da Informação</h3>
+                <p class="timeline__desc">
+                  Dedicação aos estudos de Tecnologia da Informação, consolidando conhecimentos essenciais, exercitando raciocínio crítico e estruturando a preparação para uma trajetória profissional na área.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         4. O QUE ME INTERESSA (#interests)
+         ==================================================================== -->
+    <section id="interests" class="chapter-section chapter-interests">
+      <div class="chapter-container">
+        
+        <header class="chapter-header reveal-item">
+          <div class="chapter-tag">
+            <span class="chapter-number">03</span>
+            <span class="chapter-label">CAMPOS DE ATENÇÃO</span>
+          </div>
+          <h2 class="chapter-title">O que me interessa</h2>
+          <p class="chapter-subtitle">
+            A essência da computação e a resolução de problemas como catalisadores do aprendizado.
+          </p>
+        </header>
+
+        <div class="interests-grid">
+          <article class="interest-card reveal-item">
+            <div class="card-top">
+              <span class="interest-num">01</span>
+              <span class="interest-badge">Lógica</span>
+            </div>
+            <h3 class="interest-title">Fundamentos da Tecnologia da Informação</h3>
+            <p class="interest-desc">
+              Compreender os princípios essenciais que regem a computação, a infraestrutura dos sistemas, o fluxo de dados e a arquitetura de processamento que move o ambiente digital.
+            </p>
+          </article>
+
+          <article class="interest-card reveal-item">
+            <div class="card-top">
+              <span class="interest-num">02</span>
+              <span class="interest-badge">Método</span>
+            </div>
+            <h3 class="interest-title">Raciocínio Analítico e Estruturado</h3>
+            <p class="interest-desc">
+              O fascínio por decompor desafios complexos em etapas lógicas menores, exercitando a resolução metódica de problemas e o pensamento computacional com clareza.
+            </p>
+          </article>
+
+          <article class="interest-card reveal-item">
+            <div class="card-top">
+              <span class="interest-num">03</span>
+              <span class="interest-badge">Evolução</span>
+            </div>
+            <h3 class="interest-title">Aprendizado e Aperfeiçoamento Contínuo</h3>
+            <p class="interest-desc">
+              A consciência de que a tecnologia exige postura aberta ao novo, capacidade de autocrítica, busca ativa por conhecimento e persistência diante de conteúdos desafiadores.
+            </p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         5. O QUE ESTOU CONSTRUINDO (#building)
+         ==================================================================== -->
+    <section id="building" class="chapter-section chapter-building">
+      <div class="chapter-container">
+        
+        <header class="chapter-header reveal-item">
+          <div class="chapter-tag">
+            <span class="chapter-number">04</span>
+            <span class="chapter-label">PROJETOS & DESENVOLVIMENTO</span>
+          </div>
+          <h2 class="chapter-title">O que estou construindo</h2>
+          <p class="chapter-subtitle">
+            A aplicação prática dos fundamentos em sistemas reais: integridade de dados, regras de negócio e código auditável.
+          </p>
+        </header>
+
+        <!-- Contexto editorial que preserva a essência formativa -->
+        <div class="building-editorial-intro reveal-item">
+          <p class="building-editorial-text">
+            O aprendizado teórico ganha consistência quando traduzido em código funcional e arquiteturas orientadas à estabilidade. No Colégio Raphael Di Santo, o estímulo à disciplina analítica orienta cada projeto que desenvolvo: soluções focadas em confiabilidade, regras transacionais seguras e verificação contínua por testes.
+          </p>
+        </div>
+
+        <!-- Projeto Principal em Destaque: trabiagustavo -->
+        <article class="project-flagship-card reveal-item" id="projeto-trabiagustavo">
+          <div class="project-card-header">
+            <div class="project-badge-group">
+              <span class="project-tag-featured">✦ Projeto em Destaque</span>
+              <span class="project-repo-type">Sistema Web Full Stack</span>
+            </div>
+            <div class="project-deploy-status" aria-label="Status do projeto: Publicado na Vercel com banco Neon">
+              <span class="status-live-dot" aria-hidden="true"></span>
+              <span class="status-live-text">Produção verificada • PostgreSQL Neon</span>
+            </div>
+          </div>
+
+          <div class="project-card-body">
+            <div class="project-info-column">
+              <div class="project-meta-top">
+                <span class="project-repo-name">28851-debug / trabiagustavo</span>
+                <span class="project-year">2026</span>
+              </div>
+              <h3 class="project-headline">
+                Sistema Web de Estoque e Assistência Técnica para Loja de Eletrônicos
+              </h3>
+              <p class="project-description">
+                Aplicação completa voltada à gestão operacional de produtos, movimentações de estoque e ordens de serviço. Construída com o backend como única fonte da verdade, prevenindo concorrência e saldo negativo através de transações atômicas, com acompanhamento de reparos em oito status e consumo/devolução de peças.
+              </p>
+
+              <!-- Tags de tecnologias confirmadas -->
+              <div class="project-tech-stack" aria-label="Tecnologias confirmadas utilizadas no projeto">
+                <span class="tech-tag">Node.js 20+</span>
+                <span class="tech-tag">Express 5</span>
+                <span class="tech-tag">PostgreSQL (Neon / PGlite)</span>
+                <span class="tech-tag">Drizzle ORM</span>
+                <span class="tech-tag">Zod</span>
+                <span class="tech-tag">JavaScript Modular</span>
+                <span class="tech-tag">Vitest & Playwright</span>
+              </div>
+
+              <!-- Ações do projeto -->
+              <div class="project-actions">
+                <a 
+                  href="https://github.com/28851-debug/trabiagustavo" 
+                  class="project-btn project-btn--secondary" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  id="btn-github-trabiagustavo"
+                  aria-label="Ver código do projeto trabiagustavo no GitHub (abre em nova guia)"
+                >
+                  <svg class="btn-icon" viewBox="0 0 16 16" fill="currentColor" width="16" height="16" aria-hidden="true">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                  </svg>
+                  <span>Ver código no GitHub</span>
+                  <span class="btn-external-arrow" aria-hidden="true">↗</span>
+                </a>
+
+                <a 
+                  href="https://trabiagustavo-beta.vercel.app" 
+                  class="project-btn project-btn--primary" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  id="btn-demo-trabiagustavo"
+                  aria-label="Acessar demonstração pública de trabiagustavo na Vercel (abre em nova guia)"
+                >
+                  <span class="btn-live-indicator" aria-hidden="true"></span>
+                  <span>Acessar demonstração</span>
+                  <span class="btn-external-arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Apresentação gráfica e tipográfica autoral do trabiagustavo -->
+            <div class="project-graphic-column" aria-label="Apresentação da arquitetura e especificações do projeto trabiagustavo">
+              <div class="blueprint-card">
+                <div class="blueprint-header">
+                  <div class="blueprint-dots" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <span class="blueprint-title">trabiagustavo // architecture.spec</span>
+                  <span class="blueprint-badge">v0.1.0</span>
+                </div>
+
+                <div class="blueprint-content">
+                  <!-- Schema visual dos módulos centrais -->
+                  <div class="blueprint-flow">
+                    <div class="flow-step">
+                      <span class="flow-label">Frontend</span>
+                      <span class="flow-name">Modular (sem framework)</span>
+                    </div>
+                    <div class="flow-arrow" aria-hidden="true">➔</div>
+                    <div class="flow-step">
+                      <span class="flow-label">API & Regras</span>
+                      <span class="flow-name">Express 5 + Zod</span>
+                    </div>
+                    <div class="flow-arrow" aria-hidden="true">➔</div>
+                    <div class="flow-step">
+                      <span class="flow-label">Persistência</span>
+                      <span class="flow-name">Drizzle + Postgres Neon</span>
+                    </div>
+                  </div>
+
+                  <!-- Métricas reais confirmadas no repositório -->
+                  <div class="blueprint-metrics">
+                    <div class="metric-box">
+                      <span class="metric-num">42</span>
+                      <span class="metric-label">Testes Vitest (PGlite)</span>
+                    </div>
+                    <div class="metric-box">
+                      <span class="metric-num">12</span>
+                      <span class="metric-label">Testes Playwright (e2e)</span>
+                    </div>
+                    <div class="metric-box">
+                      <span class="metric-num">16</span>
+                      <span class="metric-label">Categorias no Seed</span>
+                    </div>
+                    <div class="metric-box">
+                      <span class="metric-num">0</span>
+                      <span class="metric-label">Vulnerabilidades de prod</span>
+                    </div>
+                  </div>
+
+                  <!-- Destaques de engenharia auditáveis -->
+                  <div class="blueprint-specs-list">
+                    <div class="spec-row">
+                      <span class="spec-icon" aria-hidden="true">✔</span>
+                      <span class="spec-desc">Integridade transacional: proteção estrita contra estoque negativo</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-icon" aria-hidden="true">✔</span>
+                      <span class="spec-desc">Assistência técnica: 8 status de reparo com baixa/devolução de peças</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-icon" aria-hidden="true">✔</span>
+                      <span class="spec-desc">Segurança: sanitização contra XSS armazenado validada em testes</span>
+                    </div>
+                    <div class="spec-row">
+                      <span class="spec-icon" aria-hidden="true">✔</span>
+                      <span class="spec-desc">Endpoint de saúde: /api/health verificado em produção (HTTP 200)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Projeto Secundário Complementar: lavtudo-profissional -->
+        <article class="project-secondary-card reveal-item" id="projeto-lavtudo">
+          <div class="project-card-header">
+            <div class="project-badge-group">
+              <span class="project-tag-companion">✦ Projeto Complementar</span>
+              <span class="project-repo-type">Aplicação Comercial IoT / Web</span>
+            </div>
+            <div class="project-deploy-status" aria-label="Status do projeto: Publicado na Vercel com Supabase">
+              <span class="status-live-dot" aria-hidden="true"></span>
+              <span class="status-live-text">Produção verificada • Supabase</span>
+            </div>
+          </div>
+
+          <div class="secondary-card-content">
+            <div class="secondary-info">
+              <div class="project-meta-top">
+                <span class="project-repo-name">28851-debug / lavtudo-profissional</span>
+                <span class="project-year">2026</span>
+              </div>
+              <h3 class="secondary-title">
+                Plataforma Comercial LavTudo — Acompanhamento de Ciclos por QR Code e NFC
+              </h3>
+              <p class="secondary-description">
+                Solução para lavanderia express que permite aos clientes acompanhar o andamento de lavagens e secagens em tempo real pelo celular, por meio de QR Codes fixos e etiquetas NFC nas máquinas. Conta com painel operacional autenticado do funcionário e persistência em banco PostgreSQL via Supabase com RLS.
+              </p>
+
+              <div class="project-tech-stack" aria-label="Tecnologias confirmadas utilizadas no LavTudo">
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">React 19</span>
+                <span class="tech-tag">TanStack Router / Start</span>
+                <span class="tech-tag">Vite</span>
+                <span class="tech-tag">Supabase (PostgreSQL + RLS)</span>
+                <span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">Zod</span>
+                <span class="tech-tag">qrcode.react</span>
+              </div>
+            </div>
+
+            <div class="secondary-actions-wrap">
+              <div class="secondary-features-mini">
+                <div class="mini-feature">
+                  <span class="mini-feature-dot" aria-hidden="true">✦</span>
+                  <span>Rotas fixas por máquina (lavadoras, pet e secadoras)</span>
+                </div>
+                <div class="mini-feature">
+                  <span class="mini-feature-dot" aria-hidden="true">✦</span>
+                  <span>Sincronização em tempo real tolerante a falhas</span>
+                </div>
+                <div class="mini-feature">
+                  <span class="mini-feature-dot" aria-hidden="true">✦</span>
+                  <span>Autenticação de retaguarda com cookies HTTP-only</span>
+                </div>
+              </div>
+
+              <div class="project-actions">
+                <a 
+                  href="https://github.com/28851-debug/lavtudo-profissional" 
+                  class="project-btn project-btn--secondary" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  id="btn-github-lavtudo"
+                  aria-label="Ver código do projeto lavtudo-profissional no GitHub (abre em nova guia)"
+                >
+                  <svg class="btn-icon" viewBox="0 0 16 16" fill="currentColor" width="16" height="16" aria-hidden="true">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                  </svg>
+                  <span>Ver código no GitHub</span>
+                  <span class="btn-external-arrow" aria-hidden="true">↗</span>
+                </a>
+
+                <a 
+                  href="https://lavtudo-profissional-eight.vercel.app" 
+                  class="project-btn project-btn--primary" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  id="btn-demo-lavtudo"
+                  aria-label="Acessar demonstração pública de lavtudo-profissional na Vercel (abre em nova guia)"
+                >
+                  <span class="btn-live-indicator" aria-hidden="true"></span>
+                  <span>Acessar demonstração</span>
+                  <span class="btn-external-arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Pilares de Formação mantidos com refinamento editorial -->
+        <div class="building-pillars-section reveal-item">
+          <div class="pillars-header">
+            <span class="pillars-tag">PRINCÍPIOS DE ENGENHARIA</span>
+            <h3 class="pillars-headline">Fundamentos que guiam o desenvolvimento</h3>
+          </div>
+          <div class="building-pillars-grid">
+            <div class="pillar-row">
+              <div class="pillar-marker" aria-hidden="true">✦</div>
+              <div class="pillar-body">
+                <h4 class="pillar-title">Consolidação Acadêmica</h4>
+                <p class="pillar-text">Aproveitar plenamente o ambiente formativo do Colégio Raphael Di Santo, onde estudo desde o sexto ano, fortalecendo a disciplina intelectual e os conceitos fundamentais de computação.</p>
+              </div>
+            </div>
+
+            <div class="pillar-row">
+              <div class="pillar-marker" aria-hidden="true">✦</div>
+              <div class="pillar-body">
+                <h4 class="pillar-title">Desenvolvimento de Habilidades Reais</h4>
+                <p class="pillar-text">Foco na construção de sistemas sustentáveis com persistência relacional, lógica transacional, cobertura de testes automatizados e segurança contra vulnerabilidades.</p>
+              </div>
+            </div>
+
+            <div class="pillar-row">
+              <div class="pillar-marker" aria-hidden="true">✦</div>
+              <div class="pillar-body">
+                <h4 class="pillar-title">Preparação para o Futuro</h4>
+                <p class="pillar-text">Construir passo a passo os caminhos para atuar profissionalmente na área de Tecnologia da Informação com ética, solidez técnica e clareza de propósito.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         6. A JORNADA CONTINUA (#journey)
+         ==================================================================== -->
+    <section id="journey" class="chapter-section chapter-journey">
+      <div class="chapter-container">
+        
+        <header class="chapter-header reveal-item">
+          <div class="chapter-tag">
+            <span class="chapter-number">05</span>
+            <span class="chapter-label">PERSPECTIVA & FUTURO</span>
+          </div>
+          <h2 class="chapter-title">A jornada continua</h2>
+        </header>
+
+        <div class="journey-content reveal-item">
+          <p class="journey-statement">
+            Cada etapa concluída é o ponto de partida para o próximo aprendizado. O futuro em Tecnologia da Informação está sendo desenhado hoje, com dedicação diária e respeito ao tempo de crescimento.
+          </p>
+
+          <div class="journey-summary-box">
+            <div class="summary-line">
+              <span class="summary-label">Identidade</span>
+              <span class="summary-val">Allyson de Santana Almeida</span>
+            </div>
+            <div class="summary-line">
+              <span class="summary-label">Área Principal</span>
+              <span class="summary-val">Tecnologia da Informação</span>
+            </div>
+            <div class="summary-line">
+              <span class="summary-label">Instituição de Ensino</span>
+              <span class="summary-val">Colégio Raphael Di Santo (desde o 6º ano)</span>
+            </div>
+            <div class="summary-line">
+              <span class="summary-label">Cidade de Nascimento</span>
+              <span class="summary-val">Campinas, São Paulo, Brasil</span>
+            </div>
+          </div>
+
+          <div class="journey-actions">
+            <!-- Link nativo de retorno ao topo para #hero -->
+            <a href="#hero" class="return-top-btn" id="return-top-btn">
+              <span>Voltar ao topo</span>
+              <span class="return-arrow" aria-hidden="true">↑</span>
+            </a>
+          </div>
+        </div>
+
+        <footer class="editorial-footer reveal-item">
+          <div class="footer-left">
+            <span class="footer-dot" aria-hidden="true"></span>
+            <span>Portfólio Pessoal Autoral • Allyson de Santana Almeida</span>
+          </div>
+          <div class="footer-center">
+            <span>Colégio Raphael Di Santo • Campinas, SP</span>
+          </div>
+          <div class="footer-right">
+            <span>Tecnologia da Informação</span>
+          </div>
+        </footer>
+
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
