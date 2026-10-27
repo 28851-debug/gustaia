@@ -118,6 +118,19 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
+    // Linha progressiva da timeline sincronizada à rolagem pelo capítulo
+    const timeline = document.querySelector(".timeline");
+    const timelineLine = document.querySelector(".timeline__line");
+    if (timeline && timelineLine && !isReducedMotion) {
+      const rect = timeline.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const start = windowHeight * 0.78;
+      const total = rect.height;
+      const current = start - rect.top;
+      const timelineProgress = Math.min(Math.max(current / total, 0), 1);
+      timelineLine.style.transform = `scaleY(${timelineProgress})`;
+    }
+
     ticking = false;
   }
 
@@ -125,6 +138,10 @@ document.addEventListener("DOMContentLoaded", () => {
     parallaxElements.forEach((el) => {
       el.style.transform = "none";
     });
+    const heroSpotGlow = document.querySelector(".hero-spot-glow");
+    if (heroSpotGlow) heroSpotGlow.style.transform = "none";
+    const timelineLine = document.querySelector(".timeline__line");
+    if (timelineLine) timelineLine.style.transform = "scaleY(1)";
   }
 
   function onScroll() {
@@ -139,4 +156,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Executa uma vez no carregamento para posicionamento correto
   updateScrollState();
+
+  /* --------------------------------------------------------------------------
+     3. Profundidade Sutil no Hero com Movimento do Mouse (Cursor Fino Desktop)
+     Inspirado na atmosfera e iluminação de estúdio do site Simioni
+     -------------------------------------------------------------------------- */
+  const isFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const heroStage = document.getElementById("hero");
+  const heroSpotGlow = document.querySelector(".hero-spot-glow");
+  const decoOrbit = document.querySelector(".deco-orbit");
+
+  if (isFinePointer && !isReducedMotion && heroStage) {
+    let targetX = 0, targetY = 0;
+    let currentX = 0, currentY = 0;
+    let mouseRafId = null;
+
+    heroStage.addEventListener("mousemove", (e) => {
+      const rect = heroStage.getBoundingClientRect();
+      targetX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+      targetY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+
+      if (!mouseRafId) {
+        mouseRafId = window.requestAnimationFrame(updateMouseParallax);
+      }
+    }, { passive: true });
+
+    heroStage.addEventListener("mouseleave", () => {
+      targetX = 0;
+      targetY = 0;
+      if (!mouseRafId) {
+        mouseRafId = window.requestAnimationFrame(updateMouseParallax);
+      }
+    }, { passive: true });
+
+    function updateMouseParallax() {
+      // Interpolação suave (LERP) sem loop contínuo
+      currentX += (targetX - currentX) * 0.05;
+      currentY += (targetY - currentY) * 0.05;
+
+      if (heroSpotGlow) {
+        heroSpotGlow.style.transform = `translate3d(${currentX * 24}px, ${currentY * 20}px, 0)`;
+      }
+      if (decoOrbit) {
+        decoOrbit.style.transform = `translate3d(${currentX * -14}px, ${currentY * -10}px, 0)`;
+      }
+
+      if (Math.abs(targetX - currentX) > 0.001 || Math.abs(targetY - currentY) > 0.001) {
+        mouseRafId = window.requestAnimationFrame(updateMouseParallax);
+      } else {
+        mouseRafId = null;
+      }
+    }
+  }
 });
