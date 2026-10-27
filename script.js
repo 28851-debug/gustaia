@@ -208,4 +208,130 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
+
+  /* --------------------------------------------------------------------------
+     4. Gerenciamento e Validação do Formulário de Contato (#contact-form)
+     -------------------------------------------------------------------------- */
+  const contactForm = document.getElementById("contact-form");
+  const nameInput = document.getElementById("contact-name");
+  const emailInput = document.getElementById("contact-email");
+  const messageInput = document.getElementById("contact-message");
+  const btnSubmit = document.getElementById("btn-submit-contact");
+  const statusBanner = document.getElementById("contact-status");
+  const statusGlyph = statusBanner ? statusBanner.querySelector(".status-glyph") : null;
+  const statusTitle = statusBanner ? statusBanner.querySelector(".status-title") : null;
+  const statusMessage = statusBanner ? statusBanner.querySelector(".status-message") : null;
+
+  if (contactForm && nameInput && emailInput && messageInput && btnSubmit) {
+    const nameError = document.getElementById("name-error");
+    const emailError = document.getElementById("email-error");
+    const messageError = document.getElementById("message-error");
+
+    function validateName() {
+      const val = nameInput.value.trim();
+      if (!val) {
+        setFieldError(nameInput, nameError, "Por favor, informe seu nome.");
+        return false;
+      }
+      if (val.length < 2) {
+        setFieldError(nameInput, nameError, "O nome deve conter pelo menos 2 caracteres.");
+        return false;
+      }
+      clearFieldError(nameInput, nameError);
+      return true;
+    }
+
+    function validateEmail() {
+      const val = emailInput.value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      if (!val) {
+        setFieldError(emailInput, emailError, "Por favor, informe seu e-mail.");
+        return false;
+      }
+      if (!emailRegex.test(val)) {
+        setFieldError(emailInput, emailError, "Formato de e-mail inválido (ex: seu@email.com).");
+        return false;
+      }
+      clearFieldError(emailInput, emailError);
+      return true;
+    }
+
+    function validateMessage() {
+      const val = messageInput.value.trim();
+      if (!val) {
+        setFieldError(messageInput, messageError, "Por favor, escreva sua mensagem.");
+        return false;
+      }
+      if (val.length < 5) {
+        setFieldError(messageInput, messageError, "A mensagem deve conter pelo menos 5 caracteres.");
+        return false;
+      }
+      clearFieldError(messageInput, messageError);
+      return true;
+    }
+
+    function setFieldError(inputEl, errorEl, msg) {
+      const group = inputEl.closest(".form-group");
+      if (group) group.classList.add("has-error");
+      inputEl.setAttribute("aria-invalid", "true");
+      if (errorEl) errorEl.textContent = msg;
+    }
+
+    function clearFieldError(inputEl, errorEl) {
+      const group = inputEl.closest(".form-group");
+      if (group) group.classList.remove("has-error");
+      inputEl.removeAttribute("aria-invalid");
+      if (errorEl) errorEl.textContent = "";
+    }
+
+    // Validação nos eventos de blur e digitação
+    nameInput.addEventListener("blur", validateName);
+    nameInput.addEventListener("input", () => {
+      if (nameInput.value.trim().length >= 2) clearFieldError(nameInput, nameError);
+    });
+
+    emailInput.addEventListener("blur", validateEmail);
+    emailInput.addEventListener("input", () => {
+      if (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailInput.value.trim())) clearFieldError(emailInput, emailError);
+    });
+
+    messageInput.addEventListener("blur", validateMessage);
+    messageInput.addEventListener("input", () => {
+      if (messageInput.value.trim().length >= 5) clearFieldError(messageInput, messageError);
+    });
+
+    function showStatus(type, title, message) {
+      if (!statusBanner) return;
+      statusBanner.className = `contact-status is-${type}`;
+      statusBanner.style.display = "flex";
+      if (statusGlyph) {
+        statusGlyph.textContent = type === "success" || type === "validated" ? "✓" : "!";
+      }
+      if (statusTitle) statusTitle.textContent = title;
+      if (statusMessage) statusMessage.textContent = message;
+    }
+
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const isNameValid = validateName();
+      const isEmailValid = validateEmail();
+      const isMessageValid = validateMessage();
+
+      if (!isNameValid || !isEmailValid || !isMessageValid) {
+        if (!isNameValid) nameInput.focus();
+        else if (!isEmailValid) emailInput.focus();
+        else messageInput.focus();
+        showStatus("error", "Campos incompletos", "Preencha todos os campos obrigatórios corretamente antes de prosseguir.");
+        return;
+      }
+
+      // Confirmação visual de validação (sem falsa simulação de backend)
+      showStatus(
+        "success",
+        "Formulário validado com sucesso",
+        "Os dados foram validados corretamente. Como este portfólio não possui backend configurado, o envio real depende de uma integração futura com serviço de formulários ou servidor."
+      );
+    });
+  }
 });

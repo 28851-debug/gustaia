@@ -1,30 +1,46 @@
 /* ==========================================================================
    PORTFÓLIO PESSOAL — ALLYSON DE SANTANA ALMEIDA
-   Narrativa Cinematográfica: Carvão, Marfim e Amarelo-Limão
+   Narrativa Cinematográfica: Preto, Azul e Azul-Claro
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
    1. Design Tokens & Variáveis do Sistema
    -------------------------------------------------------------------------- */
 :root {
-  /* Paleta Oficial: Carvão, Marfim e Amarelo-Limão */
-  --bg-deep: #090a0d;
-  --bg-surface: #101217;
-  --bg-card: #141720;
-  --bg-card-alt: #181c26;
+  /* Paleta Oficial: Preto, Azul e Azul-Claro
+     - Preto: sofisticação e fundos de contraste absoluto
+     - Azul: botões, links, elementos interativos e chamadas de ação
+     - Azul-Claro: destaques suaves, badges, detalhes gráficos e leveza */
+  --bg-deep: #07090e;        /* Preto obsidiana profundo (fundo principal) */
+  --bg-surface: #0c1017;     /* Preto grafite suave (superfícies de ritmo) */
+  --bg-card: #101622;        /* Carvão azul petróleo (cartões e módulos) */
+  --bg-card-alt: #141c2c;    /* Azul petróleo escuro (painéis técnicos) */
   
-  --text-primary: #f6f5f1;
-  --text-secondary: #9ea6b5;
-  --text-muted: #5f687a;
-  
-  /* Amarelo-Limão Editorial Vibrante */
-  --accent: #d4f434;
-  --accent-dim: rgba(212, 244, 52, 0.12);
-  --accent-glow: rgba(212, 244, 52, 0.28);
+  --text-primary: #f8fafc;   /* Marfim gélido de alta legibilidade */
+  --text-secondary: #94a3b8; /* Ardósia neutra para parágrafos */
+  --text-muted: #64748b;     /* Cinza azulado para legendas e metadados */
+  --text-on-light: #07090e;  /* Preto puro para contraste sobre azul-claro */
+
+  /* Azul Interativo & Botões */
+  --blue-primary: #2563eb;   /* Azul royal elétrico vibrante */
+  --blue-hover: #1d4ed8;     /* Azul profundo para hover */
+  --blue-active: #1e40af;
+
+  /* Azul-Claro Editorial & Destaques Suaves */
+  --blue-light: #38bdf8;     /* Azul celeste para glifos, tags e linhas */
+  --blue-light-hover: #7dd3fc;
+  --blue-light-dim: rgba(56, 189, 248, 0.12); /* Fundo sutil para chips e badges */
+  --blue-light-glow: rgba(56, 189, 248, 0.28); /* Brilho de estúdio */
+
+  /* Aliases do Sistema para Manter Compatibilidade Total */
+  --accent: var(--blue-light);
+  --accent-interactive: var(--blue-primary);
+  --accent-dim: var(--blue-light-dim);
+  --accent-glow: var(--blue-light-glow);
   
   --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-medium: rgba(255, 255, 255, 0.16);
-  --border-active: var(--accent);
+  --border-medium: rgba(56, 189, 248, 0.18);
+  --border-active: var(--blue-light);
 
   /* Tipografia Expressiva com Fontes Locais Confiáveis */
   --font-display: 'Syne', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -86,8 +102,8 @@ body {
 }
 
 ::selection {
-  background-color: var(--accent);
-  color: var(--bg-deep);
+  background-color: var(--blue-primary);
+  color: #ffffff;
 }
 
 /* Link de Salto de Acessibilidade */
@@ -96,8 +112,8 @@ body {
   top: -100px;
   left: 1.5rem;
   z-index: 10000;
-  background: var(--accent);
-  color: var(--bg-deep);
+  background: var(--blue-primary);
+  color: #ffffff;
   padding: 0.75rem 1.25rem;
   font-weight: 700;
   font-size: 0.875rem;
@@ -207,7 +223,7 @@ button:focus-visible,
   right: 8%;
   width: 320px;
   height: 320px;
-  border: 1px dashed rgba(212, 244, 52, 0.15);
+  border: 1px dashed rgba(56, 189, 248, 0.2);
   border-radius: 50%;
   will-change: transform;
 }
@@ -217,11 +233,11 @@ button:focus-visible,
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, var(--accent-glow) 0%, rgba(212, 244, 52, 0) 65%);
+  background: radial-gradient(circle, var(--accent-glow) 0%, rgba(56, 189, 248, 0) 65%);
   top: 10%;
   left: 5%;
   filter: blur(140px);
-  opacity: 0.14;
+  opacity: 0.16;
   will-change: transform;
 }
 
@@ -363,11 +379,11 @@ button:focus-visible,
   width: clamp(280px, 38vw, 520px);
   height: clamp(280px, 38vw, 520px);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(212, 244, 52, 0.12) 0%, rgba(212, 244, 52, 0.03) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(37, 99, 235, 0.05) 50%, transparent 70%);
   filter: blur(80px);
   pointer-events: none;
   z-index: 0;
-  opacity: 0.85;
+  opacity: 0.9;
   will-change: transform;
 }
 
@@ -377,57 +393,12 @@ button:focus-visible,
   width: 100%;
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 2rem var(--gutter-desktop) 2.5rem;
+  padding: clamp(2.5rem, 5vw, 4rem) var(--gutter-desktop) 2.5rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   justify-content: space-between;
   gap: 2rem;
-}
-
-.hero-meta-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 0.75rem;
-  font-size: var(--size-small);
-  color: var(--text-secondary);
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-.editorial-stamp {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: var(--size-micro);
-  letter-spacing: 0.12em;
-}
-
-.stamp-index {
-  color: var(--accent);
-}
-
-.stamp-label {
-  color: var(--text-muted);
-}
-
-.coordinates-stamp {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: var(--size-small);
-  color: var(--text-secondary);
-  letter-spacing: 0.04em;
-}
-
-.coord-icon {
-  color: var(--accent);
-}
-
-.coord-city {
-  color: var(--text-muted);
 }
 
 .hero-composition {
@@ -450,7 +421,7 @@ button:focus-visible,
   gap: 0.65rem;
   padding: 0.4rem 0.95rem;
   background-color: var(--accent-dim);
-  border: 1px solid rgba(212, 244, 52, 0.28);
+  border: 1px solid rgba(56, 189, 248, 0.28);
   border-radius: var(--radius-pill);
   width: fit-content;
   color: var(--accent);
@@ -592,6 +563,46 @@ button:focus-visible,
   margin-bottom: 1.75rem;
 }
 
+/* Card de Contato Integrado ao Hero */
+.hero-contact-card {
+  padding: clamp(1.5rem, 2.5vw, 2.25rem);
+}
+
+.contact-intro {
+  font-size: var(--size-small);
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+}
+
+.hero-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.hero-contact-form .form-group {
+  margin-bottom: 0;
+}
+
+.hero-contact-form .form-input {
+  padding: 0.65rem 0.9rem;
+  font-size: 0.9rem;
+}
+
+.hero-contact-form .form-textarea {
+  padding: 0.65rem 0.9rem;
+  font-size: 0.9rem;
+  min-height: 80px;
+  max-height: 150px;
+}
+
+.hero-contact-form .btn-submit {
+  width: 100%;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.9rem;
+}
+
 .hero-academic-path {
   display: flex;
   flex-direction: column;
@@ -637,9 +648,9 @@ button:focus-visible,
   width: 100%;
   max-width: 330px;
   min-height: 48px;
-  background-color: var(--text-primary);
-  color: var(--bg-deep);
-  border: 1px solid transparent;
+  background-color: var(--blue-primary);
+  color: #ffffff;
+  border: 1px solid var(--blue-primary);
   padding: 0.85rem 1.35rem;
   border-radius: var(--radius-pill);
   font-family: var(--font-sans);
@@ -653,9 +664,9 @@ button:focus-visible,
 }
 
 .btn-cta:hover {
-  background-color: var(--accent);
+  background-color: var(--blue-hover);
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px -6px var(--accent-glow);
+  box-shadow: 0 10px 24px -6px rgba(37, 99, 235, 0.45);
 }
 
 .btn-cta:active {
@@ -676,7 +687,7 @@ button:focus-visible,
   height: 1.75rem;
   border-radius: 50%;
   background-color: var(--bg-deep);
-  color: var(--text-primary);
+  color: #ffffff;
   overflow: hidden;
   margin-left: 0.75rem;
   transition: background-color var(--duration-fast) ease, color var(--duration-fast) ease;
@@ -684,7 +695,7 @@ button:focus-visible,
 
 .btn-cta:hover .btn-cta-icon {
   background-color: var(--bg-deep);
-  color: var(--accent);
+  color: var(--blue-light);
 }
 
 .arrow-glyph {
@@ -830,7 +841,7 @@ button:focus-visible,
   width: 100%;
   max-width: 140px;
   height: 2px;
-  background: linear-gradient(90deg, var(--accent) 0%, rgba(212, 244, 52, 0) 100%);
+  background: linear-gradient(90deg, var(--blue-light) 0%, rgba(56, 189, 248, 0) 100%);
   margin-top: 1.25rem;
   transform-origin: left center;
   transform: scaleX(0);
@@ -944,7 +955,7 @@ html.js-ready:not(.reduced-motion) .chapter-header.is-revealed .chapter-rule {
   bottom: 1rem;
   left: 0.6rem;
   width: 2px;
-  background: linear-gradient(180deg, var(--accent) 0%, rgba(212, 244, 52, 0.2) 100%);
+  background: linear-gradient(180deg, var(--blue-light) 0%, rgba(56, 189, 248, 0.2) 100%);
   transform-origin: top;
 }
 
@@ -1030,96 +1041,10 @@ html.js-ready:not(.reduced-motion) .chapter-header.is-revealed .chapter-rule {
 }
 
 /* --------------------------------------------------------------------------
-   10. Capítulo 03: O Que Me Interessa (#interests)
-   -------------------------------------------------------------------------- */
-.chapter-interests {
-  background-color: var(--bg-surface);
-}
-
-.interests-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(1.5rem, 2.5vw, 2.5rem);
-}
-
-.interest-card {
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: clamp(2rem, 3vw, 2.75rem);
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-  transition: transform var(--duration-base) var(--ease-cinematic), border-color var(--duration-base) ease, box-shadow var(--duration-base) ease;
-}
-
-.interest-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
-  opacity: 0;
-  transition: opacity var(--duration-base) ease;
-}
-
-.interest-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--border-medium);
-  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.5);
-}
-
-.interest-card:hover::before {
-  opacity: 1;
-}
-
-.card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1.75rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-.interest-num {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 0.85rem;
-  color: var(--accent);
-}
-
-.interest-badge {
-  font-size: var(--size-micro);
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 600;
-}
-
-.interest-title {
-  font-family: var(--font-display);
-  font-size: var(--size-h3);
-  color: var(--text-primary);
-  line-height: 1.25;
-  margin-bottom: 1rem;
-  font-weight: 700;
-}
-
-.interest-desc {
-  font-size: var(--size-body);
-  color: var(--text-secondary);
-  line-height: 1.7;
-}
-
-/* --------------------------------------------------------------------------
-   11. Capítulo 04: O Que Estou Construindo (#building)
+   10. Capítulo 03: O Que Estou Construindo (#building)
    -------------------------------------------------------------------------- */
 .chapter-building {
-  background-color: var(--bg-deep);
+  background-color: var(--bg-surface);
   position: relative;
 }
 
@@ -1175,8 +1100,8 @@ html.js-ready:not(.reduced-motion) .chapter-header.is-revealed .chapter-rule {
   align-items: center;
   gap: 0.35rem;
   background-color: var(--accent-dim);
-  color: var(--accent);
-  border: 1px solid rgba(212, 244, 52, 0.3);
+  color: var(--blue-light);
+  border: 1px solid rgba(56, 189, 248, 0.3);
   padding: 0.3rem 0.75rem;
   border-radius: var(--radius-pill);
   font-size: var(--size-micro);
@@ -1327,26 +1252,26 @@ html.js-ready:not(.reduced-motion) .chapter-header.is-revealed .chapter-rule {
 }
 
 .project-btn--primary {
-  background-color: var(--accent);
-  color: var(--bg-deep);
-  border: 1px solid var(--accent);
+  background-color: var(--blue-primary);
+  color: #ffffff;
+  border: 1px solid var(--blue-primary);
 }
 
 .project-btn--primary:hover {
-  background-color: #e5ff54;
+  background-color: var(--blue-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px -6px var(--accent-glow);
+  box-shadow: 0 8px 24px -6px rgba(37, 99, 235, 0.45);
 }
 
 .project-btn--secondary {
-  background-color: var(--bg-surface);
+  background-color: var(--bg-card);
   color: var(--text-primary);
   border: 1px solid var(--border-medium);
 }
 
 .project-btn--secondary:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--blue-light);
+  color: var(--blue-light);
   transform: translateY(-2px);
 }
 
@@ -1671,10 +1596,10 @@ html.js-ready:not(.reduced-motion) .chapter-header.is-revealed .chapter-rule {
 }
 
 /* --------------------------------------------------------------------------
-   12. Capítulo 05: A Jornada Continua (#journey)
+   11. Capítulo 04: A Jornada Continua (#journey)
    -------------------------------------------------------------------------- */
 .chapter-journey {
-  background-color: var(--bg-surface);
+  background-color: var(--bg-deep);
   padding-bottom: 3.5rem;
 }
 
@@ -1739,8 +1664,8 @@ html.js-ready:not(.reduced-motion) .chapter-header.is-revealed .chapter-rule {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background-color: var(--accent);
-  color: var(--bg-deep);
+  background-color: var(--blue-primary);
+  color: #ffffff;
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: 0.95rem;
@@ -1750,12 +1675,13 @@ html.js-ready:not(.reduced-motion) .chapter-header.is-revealed .chapter-rule {
   min-height: 48px;
   min-width: 44px;
   cursor: pointer;
-  transition: transform var(--duration-fast) ease, background-color var(--duration-fast) ease;
+  transition: transform var(--duration-fast) ease, background-color var(--duration-fast) ease, box-shadow var(--duration-fast) ease;
 }
 
 .return-top-btn:hover {
-  background-color: #e5ff54;
+  background-color: var(--blue-hover);
   transform: translateY(-2px);
+  box-shadow: 0 8px 24px -6px rgba(37, 99, 235, 0.45);
 }
 
 .return-arrow {
@@ -1789,11 +1715,392 @@ html.js-ready:not(.reduced-motion) .chapter-header.is-revealed .chapter-rule {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background-color: var(--accent);
+  background-color: var(--blue-light);
+  box-shadow: 0 0 8px var(--blue-light);
 }
 
 .footer-right {
   color: var(--text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   12.1. Capítulo 06: Vamos Conversar? (#contact)
+   -------------------------------------------------------------------------- */
+.chapter-contact {
+  background-color: var(--bg-deep);
+  border-bottom: none;
+  padding-bottom: 3.5rem;
+}
+
+.contact-composition {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+/* Card Informativo / Editorial de Contato */
+.contact-meta-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-meta-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-meta-tag {
+  font-family: var(--font-display);
+  font-size: var(--size-micro);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--blue-light);
+}
+
+.contact-meta-title {
+  font-family: var(--font-display);
+  font-size: var(--size-h3);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.contact-meta-text {
+  font-size: var(--size-body);
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.contact-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.channel-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.channel-label {
+  font-size: var(--size-micro);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.channel-value {
+  font-size: var(--size-small);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.channel-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--size-small);
+  color: var(--blue-light);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--duration-fast) ease;
+}
+
+.channel-link:hover {
+  color: var(--blue-light-hover);
+  text-decoration: underline;
+}
+
+.channel-arrow {
+  font-size: 0.9rem;
+}
+
+.contact-guarantee {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  font-size: var(--size-micro);
+  color: var(--text-secondary);
+}
+
+.guarantee-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--blue-light);
+  box-shadow: 0 0 8px var(--blue-light);
+  flex-shrink: 0;
+}
+
+/* Formulário de Contato */
+.contact-form-wrapper {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: clamp(1.75rem, 3.5vw, 2.75rem);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  position: relative;
+}
+
+.form-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: var(--size-small);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.required-indicator {
+  color: var(--blue-light);
+  font-weight: 700;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  font-family: var(--font-sans);
+  font-size: var(--size-body);
+  transition: border-color var(--duration-fast) ease, box-shadow var(--duration-fast) ease, background-color var(--duration-fast) ease;
+  outline: none;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.75;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--blue-light);
+  box-shadow: 0 0 0 3px var(--blue-light-dim), 0 0 16px rgba(56, 189, 248, 0.15);
+  background-color: #05080f;
+}
+
+.form-group.has-error .form-input,
+.form-group.has-error .form-textarea {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+.form-error {
+  font-size: var(--size-micro);
+  color: #f87171;
+  font-weight: 500;
+  min-height: 1.1rem;
+  line-height: 1.3;
+}
+
+/* Ação de Envio */
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 0.5rem;
+}
+
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: var(--blue-primary);
+  color: #ffffff;
+  border: 1px solid var(--blue-primary);
+  padding: 0.95rem 2rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  min-height: 48px;
+  min-width: 180px;
+  transition: transform var(--duration-fast) ease, background-color var(--duration-fast) ease, box-shadow var(--duration-fast) ease;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background-color: var(--blue-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -6px rgba(37, 99, 235, 0.5);
+}
+
+.btn-submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-submit:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.btn-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.submit-arrow {
+  flex-shrink: 0;
+  transition: transform var(--duration-fast) ease;
+}
+
+.btn-submit:hover:not(:disabled) .submit-arrow {
+  transform: translateX(3px);
+}
+
+/* Spinner de Envio */
+.btn-spinner {
+  display: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: submitSpin 0.7s linear infinite;
+}
+
+.btn-submit.is-loading .btn-submit-icon {
+  display: none;
+}
+
+.btn-submit.is-loading .btn-spinner {
+  display: inline-block;
+}
+
+@keyframes submitSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* Banner de Feedback de Status */
+.contact-status {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  font-size: var(--size-small);
+  line-height: 1.5;
+  animation: statusFadeIn 0.35s ease;
+}
+
+@keyframes statusFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.contact-status.is-success {
+  background-color: rgba(56, 189, 248, 0.08);
+  border-color: var(--blue-light);
+  color: #f0fdf4;
+}
+
+.contact-status.is-info {
+  background-color: rgba(37, 99, 235, 0.09);
+  border-color: rgba(56, 189, 248, 0.35);
+  color: var(--text-primary);
+}
+
+.contact-status.is-error {
+  background-color: rgba(239, 68, 68, 0.09);
+  border-color: rgba(239, 68, 68, 0.4);
+  color: #fee2e2;
+}
+
+.status-icon-wrap {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.08);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.contact-status.is-success .status-icon-wrap {
+  background-color: var(--blue-light);
+  color: #07090e;
+}
+
+.contact-status.is-info .status-icon-wrap {
+  background-color: var(--blue-primary);
+  color: #ffffff;
+}
+
+.contact-status.is-error .status-icon-wrap {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.status-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.status-title {
+  font-weight: 700;
+  font-size: var(--size-small);
+  color: var(--text-primary);
+}
+
+.status-message {
+  font-size: var(--size-small);
+  color: var(--text-secondary);
+}
+
+.contact-return-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 3.5rem 0 2rem;
 }
 
 /* --------------------------------------------------------------------------
@@ -1896,8 +2203,9 @@ html.js-ready:not(.reduced-motion) .timeline__marker.is-revealed {
     gap: 1.25rem;
   }
 
-  .interests-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .contact-composition {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 }
 
@@ -1918,7 +2226,6 @@ html.js-ready:not(.reduced-motion) .timeline__marker.is-revealed {
     padding: 4rem var(--gutter-mobile);
   }
 
-  .coordinates-stamp .coord-city,
   .hero-identity-foot .foot-bullet,
   .editorial-footer .footer-center {
     display: none;
@@ -1931,7 +2238,6 @@ html.js-ready:not(.reduced-motion) .timeline__marker.is-revealed {
   }
 
   .about-highlights-grid,
-  .interests-grid,
   .journey-summary-box {
     grid-template-columns: 1fr;
   }
@@ -2051,8 +2357,8 @@ html.js-ready:not(.reduced-motion) .timeline__marker.is-revealed {
   }
 
   .btn-cta:hover,
-  .interest-card:hover,
   .return-top-btn:hover,
+  .btn-submit:hover,
   .project-btn:hover,
   .project-flagship-card:hover,
   .project-secondary-card:hover,
